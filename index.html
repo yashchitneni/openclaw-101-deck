@@ -206,25 +206,26 @@
 <!-- SLIDE 7: EverClaw + Morpheus -->
 <section>
   <h2>EverClaw + Morpheus 🧠</h2>
-  <p class="subtitle">Decentralized AI inference — stake tokens, use compute, get tokens back</p>
-  <div class="two-col" style="margin-top:0.5em;">
-    <div>
-      <p style="font-size:0.65em;">Traditional API: <span class="accent">Pay per token. Money gone forever.</span></p>
-      <p style="font-size:0.65em;">Morpheus: <span class="green">Stake MOR as collateral. Use AI. Get tokens back.</span></p>
-      <div class="step-box"><strong>EverClaw</strong> = Bridge between Morpheus + OpenClaw</div>
-      <div class="step-box"><strong>Smart Router</strong> = 13-dim classifier → cheapest capable model in &lt;1ms</div>
-      <div class="step-box"><strong>30+ models</strong> = Kimi K2.5, GLM Flash, Qwen, Llama</div>
+  <p class="subtitle" style="font-size:0.55em;">Decentralized AI inference — stake tokens, use compute, get tokens back</p>
+  <div style="display:flex; gap:1em; margin-top:0.3em; align-items:flex-start;">
+    <div style="flex:1;">
+      <p style="font-size:0.55em; margin:0.2em 0;"><span class="accent">Traditional:</span> Pay per token. Money gone.</p>
+      <p style="font-size:0.55em; margin:0.2em 0;"><span class="green">Morpheus:</span> Stake MOR. Use AI. Get tokens back.</p>
+      <div class="step-box" style="font-size:0.6em; padding:0.3em 0.6em; margin:0.2em 0;"><strong>EverClaw</strong> = Morpheus ↔ OpenClaw bridge</div>
+      <div class="step-box" style="font-size:0.6em; padding:0.3em 0.6em; margin:0.2em 0;"><strong>Router</strong> = 13-dim → cheapest model in &lt;1ms</div>
+      <div class="step-box" style="font-size:0.6em; padding:0.3em 0.6em; margin:0.2em 0;"><strong>30+ models</strong> = Kimi, GLM, Qwen, Llama</div>
     </div>
-    <div class="card">
-      <h3>3-Tier Routing</h3>
-      <p style="font-size:0.6em;">
-        <span class="green">⚡ LIGHT</span> — GLM 4.7 Flash<br>
-        <em>Simple Q&A, cron jobs, greetings</em><br><br>
-        <span class="highlight">🔧 STANDARD</span> — Kimi K2.5<br>
-        <em>Drafting, research, general tasks</em><br><br>
-        <span class="accent">🧠 HEAVY</span> — Claude Opus 4.6<br>
-        <em>Complex reasoning, architecture</em>
+    <div class="card" style="flex:0.8; padding:0.5em 0.7em;">
+      <h3 style="font-size:0.75em;">3-Tier Routing</h3>
+      <p style="font-size:0.55em; line-height:1.5;">
+        <span class="green">⚡ LIGHT</span> — GLM Flash · <em>Q&A, cron</em><br>
+        <span class="highlight">🔧 STD</span> — Kimi K2.5 · <em>Research, drafts</em><br>
+        <span class="accent">🧠 HEAVY</span> — Claude Opus · <em>Reasoning</em>
       </p>
+    </div>
+    <div style="flex:0.5; text-align:center;">
+      <div id="qr-everclaw" style="display:inline-block; background:#fff; padding:8px; border-radius:8px;"></div>
+      <p style="font-size:0.4em; color:#888; margin-top:0.3em;">everclaw.xyz</p>
     </div>
   </div>
 </section>
@@ -232,27 +233,24 @@
 <!-- SLIDE 7b: Why This Matters -->
 <section>
   <h2>Why This Matters <span class="accent">Now</span></h2>
-  <div style="margin-top:0.5em;">
-    <p style="font-size:0.8em;">Claude Code Max subscriptions are <span class="accent">changing</span>.</p>
-    <p style="font-size:0.7em; color:#888;">Flat-rate AI access is going away. API-first + decentralized = future-proof.</p>
-    <div class="grid-3">
-      <div class="card" style="text-align:center;">
-        <p class="stat">$0</p>
-        <p class="stat-label">Ongoing cost with MOR staking<br>(tokens returned after use)</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <p class="stat">&lt;1ms</p>
-        <p class="stat-label">Smart router classification<br>(13 dimensions per prompt)</p>
-      </div>
-      <div class="card" style="text-align:center;">
-        <p class="stat">30+</p>
-        <p class="stat-label">Models available via<br>Morpheus network</p>
-      </div>
+  <p style="font-size:0.65em; margin-top:0.3em;">Claude Code Max subscriptions are <span class="accent">changing</span>. API-first + decentralized = future-proof.</p>
+  <div class="grid-3" style="margin-top:0.4em;">
+    <div class="card" style="text-align:center; padding:0.5em;">
+      <p class="stat" style="font-size:1.6em;">$0</p>
+      <p class="stat-label">Ongoing cost w/ MOR staking</p>
     </div>
-    <blockquote style="font-size:0.7em;">
-      "Buy $200-300 of MOR, stake it, get $50-100/mo in API costs — indefinitely. Capital isn't consumed, just locked."
-    </blockquote>
+    <div class="card" style="text-align:center; padding:0.5em;">
+      <p class="stat" style="font-size:1.6em;">&lt;1ms</p>
+      <p class="stat-label">Router classification</p>
+    </div>
+    <div class="card" style="text-align:center; padding:0.5em;">
+      <p class="stat" style="font-size:1.6em;">30+</p>
+      <p class="stat-label">Models via Morpheus</p>
+    </div>
   </div>
+  <blockquote style="font-size:0.6em; margin-top:0.4em; padding:0.4em 0.8em;">
+    "$200-300 of MOR staked = $50-100/mo in API costs indefinitely. Capital isn't consumed, just locked."
+  </blockquote>
 </section>
 
 <!-- SLIDE 7c: What We Actually Built -->
@@ -390,26 +388,49 @@
 <!-- SLIDE 12: OpenClaw Deck -->
 <section>
   <h2>OpenClaw Deck 🦞</h2>
-  <p style="color:#888; font-size:0.65em;">Multi-column chat interface — talk to 7 agents side by side</p>
-  <div class="two-col" style="margin-top:0.5em;">
-    <div>
-      <ul>
+  <p style="color:#888; font-size:0.55em;">Multi-column chat — talk to 7 agents side by side</p>
+  <div style="display:flex; gap:1em; margin-top:0.3em; align-items:flex-start;">
+    <div style="flex:1;">
+      <ul style="font-size:0.65em;">
         <li>Real-time WebSocket to Gateway</li>
         <li>Markdown + syntax highlighting</li>
         <li>Keyboard nav (Tab, Cmd+1-9)</li>
         <li>Model switching per column</li>
       </ul>
-      <div class="command-block" style="font-size:0.55em;">
+      <div class="command-block" style="font-size:0.5em; padding:0.6em;">
         <span class="prompt">$</span> git clone github.com/kellyclaudeai/openclaw-deck<br>
         <span class="prompt">$</span> cd openclaw-deck && npm install<br>
-        <span class="prompt">$</span> cp .env.example .env<br>
-        <span class="comment"># Add gateway URL + token</span><br>
-        <span class="prompt">$</span> npm run dev
+        <span class="prompt">$</span> cp .env.example .env && npm run dev
       </div>
     </div>
-    <div class="card" style="text-align:center; padding:1.5em;">
-      <p style="font-size:2.5em;">🖥️</p>
-      <p style="color:#888; font-size:0.6em;">Live demo →</p>
+    <div style="flex:0.6; text-align:center;">
+      <p style="font-size:2em;">🖥️</p>
+      <p style="color:#4fc3f7; font-size:0.6em; font-weight:600;">Live demo →</p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 12b: Awesome Skills -->
+<section>
+  <h2>3,000+ Community Skills</h2>
+  <p style="color:#888; font-size:0.55em;">Browse, install, and build skills for any use case</p>
+  <div style="display:flex; gap:1.5em; margin-top:0.5em; align-items:flex-start;">
+    <div style="flex:1;">
+      <div class="grid-3" style="gap:0.4em;">
+        <div class="card" style="padding:0.4em 0.6em;"><h3 style="font-size:0.7em;">📧 Communication</h3><p style="font-size:0.5em;">Gmail, Slack, Discord, Telegram</p></div>
+        <div class="card" style="padding:0.4em 0.6em;"><h3 style="font-size:0.7em;">🐙 Dev Tools</h3><p style="font-size:0.5em;">GitHub, GitLab, CI/CD, Docker</p></div>
+        <div class="card" style="padding:0.4em 0.6em;"><h3 style="font-size:0.7em;">📊 Data</h3><p style="font-size:0.5em;">Sheets, DBs, APIs, scraping</p></div>
+        <div class="card" style="padding:0.4em 0.6em;"><h3 style="font-size:0.7em;">🏠 Smart Home</h3><p style="font-size:0.5em;">HomeAssistant, IoT, automation</p></div>
+        <div class="card" style="padding:0.4em 0.6em;"><h3 style="font-size:0.7em;">💰 Finance</h3><p style="font-size:0.5em;">Monarch, banking, crypto</p></div>
+        <div class="card" style="padding:0.4em 0.6em;"><h3 style="font-size:0.7em;">🔧 Utilities</h3><p style="font-size:0.5em;">Weather, search, TTS, OCR</p></div>
+      </div>
+      <p style="font-size:0.45em; margin-top:0.3em; color:#888;">
+        Install: <code style="font-size:0.9em;">npx clawhub@latest install &lt;skill-slug&gt;</code>
+      </p>
+    </div>
+    <div style="flex:0.4; text-align:center;">
+      <div id="qr-skills" style="display:inline-block; background:#fff; padding:8px; border-radius:8px;"></div>
+      <p style="font-size:0.4em; color:#888; margin-top:0.3em;">Awesome Skills List</p>
     </div>
   </div>
 </section>
@@ -510,6 +531,8 @@ function makeQR(elementId, url, size) {
   if (el) el.innerHTML = qr.createSvgTag(size || 5);
 }
 makeQR('qr-setup', 'https://yashchitneni.github.io/openclaw-101-deck/setup-guide.html', 5);
+makeQR('qr-everclaw', 'https://everclaw.xyz/', 4);
+makeQR('qr-skills', 'https://github.com/VoltAgent/awesome-openclaw-skills', 3);
 </script>
 </body>
 </html>
