@@ -307,26 +307,28 @@
 <section>
   <h2>Hands-On: DigitalOcean Setup</h2>
   <p class="subtitle">~10 minutes from zero to running agent</p>
-  <div class="command-block">
-    <span class="comment"># Step 1: Create Droplet (pre-selected OpenClaw image)</span><br>
-    <span class="comment"># → cloud.digitalocean.com/droplets/new?image=openclaw</span><br>
-    <span class="comment"># Pick: 4GB RAM / 2 CPU / $24mo / your closest region</span><br><br>
-    <span class="comment"># Step 2: SSH in and configure</span><br>
-    <span class="prompt">$</span> ssh root@YOUR_DROPLET_IP<br>
-    <span class="prompt">$</span> openclaw onboard --install-daemon<br><br>
-    <span class="comment"># Step 3: Connect Telegram</span><br>
-    <span class="comment"># → Talk to @BotFather, get token</span><br>
-    <span class="prompt">$</span> openclaw config edit<br>
-    <span class="comment"># → Add telegram token + your user ID</span><br>
-    <span class="prompt">$</span> openclaw gateway restart<br><br>
-    <span class="comment"># Step 4: Access web dashboard</span><br>
-    <span class="prompt">$</span> ssh -L 18789:127.0.0.1:18789 root@YOUR_DROPLET_IP<br>
-    <span class="comment"># → Open http://127.0.0.1:18789</span><br><br>
-    <span class="comment"># 🎉 You now have an always-on AI agent</span>
+  <div class="two-col">
+    <div class="command-block" style="font-size:0.6em;">
+      <span class="comment"># Step 1: Create Droplet</span><br>
+      <span class="comment"># → cloud.digitalocean.com/droplets/new?image=openclaw</span><br>
+      <span class="comment"># Pick: 4GB RAM / 2 CPU / $24mo</span><br><br>
+      <span class="comment"># Step 2: SSH in and configure</span><br>
+      <span class="prompt">$</span> ssh root@YOUR_DROPLET_IP<br>
+      <span class="prompt">$</span> openclaw onboard --install-daemon<br><br>
+      <span class="comment"># Step 3: Connect Telegram</span><br>
+      <span class="prompt">$</span> openclaw config edit<br>
+      <span class="comment"># → Add bot token + user ID</span><br>
+      <span class="prompt">$</span> openclaw gateway restart<br><br>
+      <span class="comment"># Step 4: Web dashboard</span><br>
+      <span class="prompt">$</span> ssh -L 18789:127.0.0.1:18789 root@YOUR_DROPLET_IP<br><br>
+      <span class="comment"># 🎉 You now have an always-on AI agent</span>
+    </div>
+    <div style="text-align:center;">
+      <div id="qr-setup" style="margin:0 auto; display:inline-block; background:#fff; padding:12px; border-radius:12px;"></div>
+      <p style="font-size:0.6em; color:#888; margin-top:0.8em;">Scan for full step-by-step guide<br>with copy-paste commands</p>
+      <p style="font-size:0.5em; margin-top:0.5em;"><a href="./setup-guide.html">setup-guide.html</a></p>
+    </div>
   </div>
-  <p style="font-size:0.5em; color:#666; margin-top:1em;">
-    Full guide: <a href="https://www.shopclawmart.com/blog/set-up-openclaw-10-minutes-digitalocean">shopclawmart.com/blog/set-up-openclaw-10-minutes-digitalocean</a>
-  </p>
 </section>
 
 <!-- SLIDE 10: What You'll Need -->
@@ -489,6 +491,7 @@
 </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
 <script>
@@ -500,6 +503,16 @@ Reveal.initialize({
   width: 1280,
   height: 720
 });
+
+// Generate QR codes
+function makeQR(elementId, url, size) {
+  var qr = qrcode(0, 'M');
+  qr.addData(url);
+  qr.make();
+  var el = document.getElementById(elementId);
+  if (el) el.innerHTML = qr.createSvgTag(size || 5);
+}
+makeQR('qr-setup', 'https://yashchitneni.github.io/openclaw-101-deck/setup-guide.html', 5);
 </script>
 </body>
 </html>

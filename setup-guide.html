@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw Setup Guide — AI x Education Workshop</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background: #0a0a0a;
+    color: #e8e8e8;
+    line-height: 1.7;
+    padding: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 2em; margin-bottom: 0.3em; letter-spacing: -0.02em; }
+  h2 { font-size: 1.4em; color: #4fc3f7; margin-top: 2em; margin-bottom: 0.5em; }
+  h3 { font-size: 1.1em; color: #69f0ae; margin-top: 1.5em; margin-bottom: 0.4em; }
+  p { margin-bottom: 1em; color: #ccc; }
+  a { color: #4fc3f7; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .subtitle { color: #888; font-size: 0.85em; }
+  .hero { text-align: center; padding: 2em 0 1em; border-bottom: 1px solid #222; margin-bottom: 2em; }
+  .hero .emoji { font-size: 3em; }
+  code {
+    background: #1a1a2e;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.9em;
+  }
+  pre {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1.2em;
+    overflow-x: auto;
+    margin: 1em 0;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.85em;
+    line-height: 1.6;
+    color: #c9d1d9;
+  }
+  pre .prompt { color: #69f0ae; }
+  pre .comment { color: #8b949e; }
+  .step {
+    background: #141425;
+    border-left: 4px solid #4fc3f7;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .step-number {
+    display: inline-block;
+    background: #4fc3f7;
+    color: #0a0a0a;
+    font-weight: 800;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    font-size: 0.85em;
+  }
+  .time-est {
+    display: inline-block;
+    background: #1a1a2e;
+    border: 1px solid #4fc3f7;
+    border-radius: 20px;
+    padding: 2px 12px;
+    font-size: 0.75em;
+    color: #4fc3f7;
+    margin-left: 0.5em;
+  }
+  .prereq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    margin: 1em 0;
+  }
+  .prereq-card {
+    background: #141425;
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+  }
+  .prereq-card .emoji { font-size: 2em; }
+  .prereq-card p { font-size: 0.8em; margin: 0.5em 0 0; }
+  .warning {
+    background: #2a1a00;
+    border-left: 4px solid #ff9800;
+    padding: 1em 1.5em;
+    border-radius: 0 8px 8px 0;
+    margin: 1em 0;
+  }
+  .success {
+    background: #0a2a0a;
+    border-left: 4px solid #69f0ae;
+    padding: 1em 1.5em;
+    border-radius: 0 8px 8px 0;
+    margin: 1em 0;
+  }
+  .copy-btn {
+    background: #4fc3f7;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-size: 0.75em;
+    cursor: pointer;
+    float: right;
+    font-weight: 600;
+  }
+  .copy-btn:hover { background: #81d4fa; }
+  .links { margin-top: 3em; padding-top: 2em; border-top: 1px solid #222; }
+  .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; margin: 1em 0; }
+  .link-card {
+    background: #141425;
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    padding: 1em;
+  }
+  .link-card h3 { margin-top: 0; font-size: 1em; }
+  .link-card p { font-size: 0.8em; color: #888; margin: 0; }
+  .copyable { position: relative; }
+  footer { text-align: center; margin-top: 3em; padding: 2em 0; color: #555; font-size: 0.8em; border-top: 1px solid #222; }
+  @media (max-width: 600px) {
+    body { padding: 1em; }
+    .prereq-grid { grid-template-columns: 1fr; }
+    .link-grid { grid-template-columns: 1fr; }
+    pre { font-size: 0.75em; padding: 0.8em; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="emoji">🦞</div>
+  <h1>OpenClaw Setup Guide</h1>
+  <p class="subtitle">AI x Education Workshop · Feb 18, 2026 · Station Austin</p>
+  <p class="subtitle">Get your own AI agent running in ~10 minutes</p>
+</div>
+
+<h2>What You'll Need</h2>
+<div class="prereq-grid">
+  <div class="prereq-card">
+    <div class="emoji">☁️</div>
+    <h3>DigitalOcean</h3>
+    <p><a href="https://www.digitalocean.com/">Sign up</a> (free trial available)</p>
+  </div>
+  <div class="prereq-card">
+    <div class="emoji">🔑</div>
+    <h3>LLM API Key</h3>
+    <p><a href="https://console.anthropic.com/">Anthropic</a> (Claude) recommended</p>
+  </div>
+  <div class="prereq-card">
+    <div class="emoji">💬</div>
+    <h3>Messaging App</h3>
+    <p>Telegram is the easiest start</p>
+  </div>
+</div>
+
+<p>No Docker experience needed. No server admin background required.</p>
+
+<!-- STEP 1 -->
+<div class="step">
+  <h2><span class="step-number">1</span> Create Your Droplet <span class="time-est">~2 min</span></h2>
+  <p>Click the link below — it pre-selects the OpenClaw 1-Click image:</p>
+  <p><a href="https://cloud.digitalocean.com/droplets/new?image=openclaw" target="_blank" style="font-size:1.1em; font-weight:600;">→ Create OpenClaw Droplet on DigitalOcean</a></p>
+  <br>
+  <p><strong>Settings:</strong></p>
+  <ul style="padding-left:1.5em; color:#ccc;">
+    <li><strong>Region:</strong> Wherever is closest to you</li>
+    <li><strong>Size:</strong> 4GB RAM / 2 CPU ($24/mo) — plenty for personal use</li>
+    <li><strong>Auth:</strong> SSH key (recommended) or password</li>
+  </ul>
+  <p style="margin-top:0.5em;">Click <strong>Create Droplet</strong> and wait ~60 seconds.</p>
+</div>
+
+<!-- STEP 2 -->
+<div class="step">
+  <h2><span class="step-number">2</span> SSH In & Configure <span class="time-est">~3 min</span></h2>
+  <p>Grab your Droplet's IP from the dashboard, then:</p>
+  <div class="copyable">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><span class="prompt">$</span> ssh root@YOUR_DROPLET_IP</pre>
+  </div>
+  <p>Run the onboarding wizard:</p>
+  <div class="copyable">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><span class="prompt">$</span> openclaw onboard --install-daemon</pre>
+  </div>
+  <p>This walks you through:</p>
+  <ul style="padding-left:1.5em; color:#ccc;">
+    <li>Setting your LLM API key (paste your Anthropic key)</li>
+    <li>Choosing a gateway password</li>
+    <li>Installing the background service (auto-start)</li>
+  </ul>
+</div>
+
+<!-- STEP 3 -->
+<div class="step">
+  <h2><span class="step-number">3</span> Connect Telegram <span class="time-est">~3 min</span></h2>
+  <p>The fastest way to start chatting with your agent:</p>
+  <ol style="padding-left:1.5em; color:#ccc; margin-bottom:1em;">
+    <li>Open Telegram → talk to <a href="https://t.me/BotFather" target="_blank">@BotFather</a></li>
+    <li>Send <code>/newbot</code>, name it, copy the token</li>
+    <li>Add it to your OpenClaw config:</li>
+  </ol>
+  <div class="copyable">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><span class="prompt">$</span> openclaw config edit
+<span class="comment"># Add your Telegram bot token under channels.telegram.token</span>
+<span class="comment"># Set your Telegram user ID in channels.telegram.allowFrom</span></pre>
+  </div>
+  <p>Then restart:</p>
+  <div class="copyable">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><span class="prompt">$</span> openclaw gateway restart</pre>
+  </div>
+  <div class="success">
+    <strong>✅ Done!</strong> Send a message to your bot. It responds. You now have a personal AI agent running 24/7 in the cloud.
+  </div>
+</div>
+
+<!-- STEP 4 -->
+<div class="step">
+  <h2><span class="step-number">4</span> Access the Web Dashboard <span class="time-est">~2 min</span></h2>
+  <p>Monitor sessions, view logs, manage config — all from your browser:</p>
+  <div class="copyable">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><span class="prompt">$</span> ssh -L 18789:127.0.0.1:18789 root@YOUR_DROPLET_IP</pre>
+  </div>
+  <p>Then open <a href="http://127.0.0.1:18789" target="_blank">http://127.0.0.1:18789</a> in your browser.</p>
+</div>
+
+<!-- WHAT NEXT -->
+<h2>🚀 What Can Your Agent Do?</h2>
+<ul style="padding-left:1.5em; color:#ccc; line-height:2;">
+  <li>Answer questions from any connected messaging app</li>
+  <li>Run scheduled tasks — daily briefings, reminders, automated checks</li>
+  <li>Browse the web and summarize content</li>
+  <li>Execute code in a sandboxed environment</li>
+  <li>Install <strong>skills</strong> from <a href="https://clawhub.com">ClawHub</a> — weather, email, GitHub, calendar, and dozens more</li>
+</ul>
+
+<h2>🧩 Install Your First Skill</h2>
+<p>Skills are plugins that give your agent new abilities. Try the weather skill:</p>
+<div class="copyable">
+  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  <pre><span class="prompt">$</span> openclaw skill install weather
+<span class="prompt">$</span> openclaw gateway restart</pre>
+</div>
+<p>Now ask your agent "What's the weather in Austin?" and watch it work.</p>
+
+<h2>🎨 Personalize Your Agent</h2>
+<p>The real power: make it <em>yours</em>. Create these files in your workspace:</p>
+<ul style="padding-left:1.5em; color:#ccc; line-height:2;">
+  <li><code>SOUL.md</code> — Personality, communication style, operating principles</li>
+  <li><code>USER.md</code> — Who you are, what you care about, your projects</li>
+  <li><code>HEARTBEAT.md</code> — Proactive routines (morning briefings, email triage, reminders)</li>
+  <li><code>MEMORY.md</code> — Persistent context that survives across sessions</li>
+  <li><code>TOOLS.md</code> — Available tools, credentials, local setup</li>
+</ul>
+
+<h2>🔧 Troubleshooting</h2>
+<div class="copyable">
+  <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+  <pre><span class="comment"># Built-in diagnostic — checks config, API, channels</span>
+<span class="prompt">$</span> openclaw doctor
+
+<span class="comment"># Check gateway status</span>
+<span class="prompt">$</span> openclaw status
+
+<span class="comment"># View recent logs</span>
+<span class="prompt">$</span> openclaw gateway logs</pre>
+</div>
+
+<div class="warning">
+  <strong>⚠️ Common issue:</strong> If your agent isn't responding, run <code>openclaw doctor</code> first. It catches 90% of problems.
+</div>
+
+<!-- LINKS -->
+<div class="links">
+  <h2>📚 Resources</h2>
+  <div class="link-grid">
+    <div class="link-card">
+      <h3>📖 Documentation</h3>
+      <p><a href="https://docs.openclaw.ai">docs.openclaw.ai</a></p>
+    </div>
+    <div class="link-card">
+      <h3>💬 Discord Community</h3>
+      <p><a href="https://discord.com/invite/clawd">discord.com/invite/clawd</a></p>
+    </div>
+    <div class="link-card">
+      <h3>🧩 Skills Marketplace</h3>
+      <p><a href="https://clawhub.com">clawhub.com</a></p>
+    </div>
+    <div class="link-card">
+      <h3>🛒 Premium Packs</h3>
+      <p><a href="https://shopclawmart.com">shopclawmart.com</a></p>
+    </div>
+    <div class="link-card">
+      <h3>🐙 Source Code</h3>
+      <p><a href="https://github.com/openclaw/openclaw">github.com/openclaw/openclaw</a></p>
+    </div>
+    <div class="link-card">
+      <h3>📝 Full Blog Guide</h3>
+      <p><a href="https://www.shopclawmart.com/blog/set-up-openclaw-10-minutes-digitalocean">10-Min DO Setup Guide</a></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  OpenClaw 101 · AI x Education · Hosted by Yash Chitneni · Feb 18, 2026
+</footer>
+
+<script>
+function copyCode(btn) {
+  const pre = btn.parentElement.querySelector('pre');
+  const text = pre.innerText.replace(/^\$ /gm, '').replace(/^# .*$/gm, '').trim();
+  navigator.clipboard.writeText(text);
+  btn.textContent = 'Copied!';
+  setTimeout(() => btn.textContent = 'Copy', 1500);
+}
+</script>
+</body>
+</html>
