@@ -52,7 +52,7 @@
   .reveal .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6em; }
   .reveal .stat { font-size: 2em; font-weight: 800; color: #4fc3f7; }
   .reveal .stat-label { font-size: 0.55em; color: #888; }
-  .reveal .slides section { overflow: hidden; }
+  .reveal .slides section { overflow: hidden; box-sizing: border-box; padding: 20px 40px; }
   .reveal blockquote { 
     border-left: 4px solid #4fc3f7; 
     padding: 0.5em 1em; 
@@ -99,10 +99,10 @@
 <!-- SLIDE 2: The Problem -->
 <section>
   <h2>The Problem</h2>
-  <p style="font-size:1.2em; margin-top:1em;">You talk to AI all day.</p>
-  <p style="font-size:1.2em;" class="highlight">Then you close the tab and it forgets everything.</p>
+  <p style="font-size:0.95em; margin-top:1em;">You talk to AI all day.</p>
+  <p style="font-size:0.95em;" class="highlight">Then you close the tab and it forgets everything.</p>
   <br>
-  <p style="color:#888; font-size:0.8em;">No memory. No initiative. No agency.<br>Every conversation starts from zero.</p>
+  <p style="color:#888; font-size:0.7em;">No memory. No initiative. No agency.<br>Every conversation starts from zero.</p>
 </section>
 
 <!-- SLIDE 3: What if -->
@@ -110,13 +110,13 @@
   <h2>What if your AI...</h2>
   <ul>
     <li>🧠 Remembered everything about you</li>
-    <li>📱 Lived in your messaging apps (Slack, Telegram, Signal, Discord)</li>
+    <li>📱 Lived in your messaging apps (Slack, Telegram, Signal)</li>
     <li>⏰ Ran tasks while you slept</li>
     <li>🔧 Had real tools — email, calendar, browser, code</li>
     <li>🏠 Was <em>yours</em> — running on your hardware, your rules</li>
   </ul>
   <br>
-  <p class="highlight" style="font-size:1.1em;">That's OpenClaw.</p>
+  <p class="highlight" style="font-size:0.9em;">That's OpenClaw.</p>
 </section>
 
 <!-- SLIDE 4: What is OpenClaw -->
@@ -124,7 +124,7 @@
   <h2>What is OpenClaw?</h2>
   <div class="two-col">
     <div>
-      <p>An <span class="highlight">open-source AI agent framework</span> that turns any LLM into a persistent, tool-using assistant.</p>
+      <p style="font-size:0.75em;">An <span class="highlight">open-source AI agent framework</span> that turns any LLM into a persistent, tool-using assistant.</p>
       <br>
       <div class="tag">Open Source</div>
       <div class="tag">Self-Hosted</div>
@@ -150,7 +150,7 @@
 <!-- SLIDE 5: Architecture -->
 <section>
   <h2>How It Works</h2>
-  <div style="font-size:0.8em; line-height:1.8;">
+  <div style="font-size:0.7em; line-height:1.6;">
     <div class="step-box">
       <strong class="highlight">You</strong> → Message via Slack / Telegram / Discord / Signal / Web
     </div>
@@ -207,18 +207,17 @@
 <section>
   <h2>EverClaw + Morpheus 🧠</h2>
   <p class="subtitle">Decentralized AI inference — stake tokens, use compute, get tokens back</p>
-  <div class="two-col" style="margin-top:1em;">
+  <div class="two-col" style="margin-top:0.5em;">
     <div>
-      <p style="font-size:0.8em;">Traditional API: <span class="accent">Pay per token. Money gone forever.</span></p>
-      <p style="font-size:0.8em;">Morpheus: <span class="green">Stake MOR tokens as collateral. Use AI. Get tokens back.</span></p>
-      <br>
-      <div class="step-box"><strong>EverClaw</strong> = Bridge between Morpheus network + OpenClaw</div>
-      <div class="step-box"><strong>Smart Router</strong> = 13-dimension classifier routes each prompt to cheapest capable model in &lt;1ms</div>
-      <div class="step-box"><strong>30+ models</strong> = Kimi K2.5, GLM Flash, Qwen, Llama, and more</div>
+      <p style="font-size:0.65em;">Traditional API: <span class="accent">Pay per token. Money gone forever.</span></p>
+      <p style="font-size:0.65em;">Morpheus: <span class="green">Stake MOR as collateral. Use AI. Get tokens back.</span></p>
+      <div class="step-box"><strong>EverClaw</strong> = Bridge between Morpheus + OpenClaw</div>
+      <div class="step-box"><strong>Smart Router</strong> = 13-dim classifier → cheapest capable model in &lt;1ms</div>
+      <div class="step-box"><strong>30+ models</strong> = Kimi K2.5, GLM Flash, Qwen, Llama</div>
     </div>
     <div class="card">
       <h3>3-Tier Routing</h3>
-      <p style="font-size:0.7em;">
+      <p style="font-size:0.6em;">
         <span class="green">⚡ LIGHT</span> — GLM 4.7 Flash<br>
         <em>Simple Q&A, cron jobs, greetings</em><br><br>
         <span class="highlight">🔧 STANDARD</span> — Kimi K2.5<br>
@@ -233,10 +232,9 @@
 <!-- SLIDE 7b: Why This Matters -->
 <section>
   <h2>Why This Matters <span class="accent">Now</span></h2>
-  <div style="margin-top:1em;">
-    <p style="font-size:0.95em;">Claude Code Max subscriptions are <span class="accent">changing</span>.</p>
-    <p style="font-size:0.85em; color:#888;">Flat-rate AI access is going away. API-first + decentralized = future-proof.</p>
-    <br>
+  <div style="margin-top:0.5em;">
+    <p style="font-size:0.8em;">Claude Code Max subscriptions are <span class="accent">changing</span>.</p>
+    <p style="font-size:0.7em; color:#888;">Flat-rate AI access is going away. API-first + decentralized = future-proof.</p>
     <div class="grid-3">
       <div class="card" style="text-align:center;">
         <p class="stat">$0</p>
@@ -251,9 +249,8 @@
         <p class="stat-label">Models available via<br>Morpheus network</p>
       </div>
     </div>
-    <br>
-    <blockquote>
-      "Buy $200-300 of MOR, stake it, and get the equivalent of $50-100/month in API costs — indefinitely. Your capital isn't consumed, just locked while in use."
+    <blockquote style="font-size:0.7em;">
+      "Buy $200-300 of MOR, stake it, get $50-100/mo in API costs — indefinitely. Capital isn't consumed, just locked."
     </blockquote>
   </div>
 </section>
@@ -262,7 +259,7 @@
 <section>
   <h2>What We Built: <span class="highlight">Live on My Agent</span></h2>
   <p class="subtitle">Installed Feb 14, 2026 — running in production right now</p>
-  <div class="command-block" style="font-size:0.6em; line-height:1.7;">
+  <div class="command-block" style="font-size:0.55em; line-height:1.5;">
     <span class="comment"># The stack running on my iMac right now:</span><br><br>
     <span class="comment"># EverClaw v0.9.4 — Morpheus ↔ OpenClaw bridge</span><br>
     Morpheus Proxy ─── port 8083 (LaunchAgent)<br>
@@ -282,25 +279,23 @@
 <!-- SLIDE 8: Setup Options -->
 <section>
   <h2>Two Ways to Run OpenClaw</h2>
-  <div class="two-col" style="margin-top:1em;">
+  <div class="two-col" style="margin-top:0.5em;">
     <div class="card">
       <h3>💻 Local Machine</h3>
-      <p>
-        ✅ Free (no hosting cost)<br>
-        ✅ Full access to local files & tools<br>
+      <p style="font-size:0.6em;">
+        ✅ Free · ✅ Local file access<br>
         ❌ Sleeps when laptop closes<br>
-        ❌ Manual security setup<br><br>
-        <em>Great for: experimenting, development</em>
+        ❌ Manual security setup<br>
+        <em>Best for: experimenting</em>
       </p>
     </div>
     <div class="card" style="border-color: #4fc3f7;">
-      <h3>☁️ DigitalOcean Droplet <span class="green">← Recommended</span></h3>
-      <p>
-        ✅ Always on, 24/7<br>
-        ✅ $24/mo (4GB/2CPU)<br>
+      <h3>☁️ DigitalOcean <span class="green">← Recommended</span></h3>
+      <p style="font-size:0.6em;">
+        ✅ Always on 24/7 · ✅ $24/mo<br>
         ✅ 1-Click image, 10min setup<br>
-        ✅ Auto security hardening<br><br>
-        <em>Great for: daily driver, real use</em>
+        ✅ Auto security hardening<br>
+        <em>Best for: daily driver</em>
       </p>
     </div>
   </div>
@@ -395,29 +390,26 @@
 <!-- SLIDE 12: OpenClaw Deck -->
 <section>
   <h2>OpenClaw Deck 🦞</h2>
-  <p style="color:#888; font-size:0.8em;">Multi-column chat interface — talk to 7 agents side by side</p>
-  <div class="two-col" style="margin-top:1em;">
+  <p style="color:#888; font-size:0.65em;">Multi-column chat interface — talk to 7 agents side by side</p>
+  <div class="two-col" style="margin-top:0.5em;">
     <div>
       <ul>
-        <li>Real-time WebSocket connection to Gateway</li>
-        <li>Full markdown rendering with syntax highlighting</li>
-        <li>Keyboard navigation (Tab, Cmd+1-9, Cmd+K)</li>
+        <li>Real-time WebSocket to Gateway</li>
+        <li>Markdown + syntax highlighting</li>
+        <li>Keyboard nav (Tab, Cmd+1-9)</li>
         <li>Model switching per column</li>
-        <li>Clean, responsive UI</li>
       </ul>
-      <br>
-      <div class="command-block">
+      <div class="command-block" style="font-size:0.55em;">
         <span class="prompt">$</span> git clone github.com/kellyclaudeai/openclaw-deck<br>
         <span class="prompt">$</span> cd openclaw-deck && npm install<br>
         <span class="prompt">$</span> cp .env.example .env<br>
-        <span class="comment"># Add your gateway URL + token</span><br>
-        <span class="prompt">$</span> npm run dev<br>
-        <span class="comment"># → http://localhost:5173</span>
+        <span class="comment"># Add gateway URL + token</span><br>
+        <span class="prompt">$</span> npm run dev
       </div>
     </div>
-    <div class="card" style="text-align:center; padding:2em;">
-      <p style="font-size:3em;">🖥️</p>
-      <p style="color:#888; font-size:0.7em;">Live demo →</p>
+    <div class="card" style="text-align:center; padding:1.5em;">
+      <p style="font-size:2.5em;">🖥️</p>
+      <p style="color:#888; font-size:0.6em;">Live demo →</p>
     </div>
   </div>
 </section>
@@ -425,8 +417,8 @@
 <!-- SLIDE 13: Personalization - the Secret Sauce -->
 <section>
   <h2>The Secret Sauce: <span class="highlight">Personalization</span></h2>
-  <p style="color:#888; font-size:0.8em;">OpenClaw agents aren't generic — they're <em>yours</em>.</p>
-  <div class="two-col" style="margin-top:1em;">
+  <p style="color:#888; font-size:0.65em;">OpenClaw agents aren't generic — they're <em>yours</em>.</p>
+  <div class="two-col" style="margin-top:0.5em;">
     <div>
       <div class="step-box"><strong>SOUL.md</strong> — Your agent's personality & operating style</div>
       <div class="step-box"><strong>USER.md</strong> — Who you are, what you care about</div>
@@ -446,19 +438,19 @@
 <!-- SLIDE 14: Community -->
 <section>
   <h2>Join the Community</h2>
-  <div class="grid-3" style="margin-top:1.5em;">
+  <div class="grid-3" style="margin-top:1em;">
     <div class="card" style="text-align:center;">
-      <p style="font-size:2em;">💬</p>
+      <p style="font-size:1.5em;">💬</p>
       <h3>Discord</h3>
       <p><a href="https://discord.com/invite/clawd">discord.com/invite/clawd</a></p>
     </div>
     <div class="card" style="text-align:center;">
-      <p style="font-size:2em;">🛠️</p>
+      <p style="font-size:1.5em;">🛠️</p>
       <h3>ClawHub</h3>
       <p><a href="https://clawhub.com">clawhub.com</a><br>Browse & share skills</p>
     </div>
     <div class="card" style="text-align:center;">
-      <p style="font-size:2em;">🛒</p>
+      <p style="font-size:1.5em;">🛒</p>
       <h3>Claw Mart</h3>
       <p><a href="https://shopclawmart.com">shopclawmart.com</a><br>Premium agents & packs</p>
     </div>
