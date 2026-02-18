@@ -16,15 +16,15 @@
   }
   .reveal { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
   .reveal h1, .reveal h2, .reveal h3 { font-weight: 700; letter-spacing: -0.02em; }
-  .reveal h1 { font-size: 2.4em; }
-  .reveal h2 { font-size: 1.8em; }
-  .reveal h3 { font-size: 1.3em; color: #4fc3f7; }
+  .reveal h1 { font-size: 2em; }
+  .reveal h2 { font-size: 1.5em; }
+  .reveal h3 { font-size: 1.1em; color: #4fc3f7; }
   .reveal .subtitle { color: #999; font-size: 0.7em; margin-top: 0.5em; }
   .reveal .highlight { color: #4fc3f7; }
   .reveal .accent { color: #ff6b6b; }
   .reveal .green { color: #69f0ae; }
   .reveal ul { text-align: left; }
-  .reveal li { margin-bottom: 0.4em; font-size: 0.85em; }
+  .reveal li { margin-bottom: 0.2em; font-size: 0.75em; }
   .reveal code { background: #1a1a2e; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; }
   .reveal pre code { padding: 16px; font-size: 0.7em; line-height: 1.4; }
   .reveal .two-col { display: flex; gap: 2em; align-items: flex-start; }
@@ -33,25 +33,26 @@
   .reveal .step-box {
     background: #1a1a2e;
     border-left: 4px solid #4fc3f7;
-    padding: 0.8em 1.2em;
-    margin: 0.5em 0;
+    padding: 0.4em 0.8em;
+    margin: 0.3em 0;
     border-radius: 0 8px 8px 0;
     text-align: left;
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
   .reveal .card {
     background: #141425;
     border: 1px solid #2a2a4a;
-    border-radius: 12px;
-    padding: 1.2em;
-    margin: 0.5em;
+    border-radius: 10px;
+    padding: 0.7em 0.9em;
+    margin: 0.3em;
     text-align: left;
   }
-  .reveal .card h3 { margin-top: 0; font-size: 1em; }
-  .reveal .card p { font-size: 0.75em; color: #aaa; }
-  .reveal .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; }
-  .reveal .stat { font-size: 2.5em; font-weight: 800; color: #4fc3f7; }
-  .reveal .stat-label { font-size: 0.6em; color: #888; }
+  .reveal .card h3 { margin-top: 0; font-size: 0.85em; }
+  .reveal .card p { font-size: 0.65em; color: #aaa; margin: 0; }
+  .reveal .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6em; }
+  .reveal .stat { font-size: 2em; font-weight: 800; color: #4fc3f7; }
+  .reveal .stat-label { font-size: 0.55em; color: #888; }
+  .reveal .slides section { overflow: hidden; }
   .reveal blockquote { 
     border-left: 4px solid #4fc3f7; 
     padding: 0.5em 1em; 
@@ -171,31 +172,33 @@
 <!-- SLIDE 6: Real World Example -->
 <section>
   <h2>Real World: My Agent <span class="highlight">"Obi"</span> 🥷</h2>
-  <p style="color:#888; font-size:0.7em;">Running on an iMac, connected via Slack & Telegram</p>
-  <div class="grid-3" style="margin-top:1em;">
+  <p style="color:#888; font-size:0.65em;">Running on an iMac · Slack & Telegram · Always on</p>
+  <div class="grid-3" style="margin-top:0.5em;">
     <div class="card">
       <h3>🌅 Morning Briefing</h3>
-      <p>Calendar, weather, health data, focus stack — delivered to Slack at 7:30am daily</p>
+      <p>Calendar + weather + focus stack → Slack at 7:30am</p>
     </div>
     <div class="card">
       <h3>📧 Email Triage</h3>
-      <p>Scans Gmail every 2 hours, prioritizes senders, creates tasks, summarizes newsletters</p>
+      <p>Gmail every 2h, prioritize, create tasks</p>
     </div>
     <div class="card">
       <h3>📋 Task Management</h3>
-      <p>Obsidian vault as source of truth — triages inbox, suggests focus, tracks projects</p>
+      <p>Obsidian vault → triage, focus, track</p>
     </div>
+  </div>
+  <div class="grid-3" style="margin-top:0;">
     <div class="card">
       <h3>🐛 GitHub Monitor</h3>
-      <p>Watches repos hourly, auto-fixes bugs, creates PRs — all autonomous</p>
+      <p>Hourly watch → auto-fix → PR</p>
     </div>
     <div class="card">
       <h3>🧠 Memory</h3>
-      <p>Persistent knowledge across sessions — knows my projects, preferences, history</p>
+      <p>Persistent context across sessions</p>
     </div>
     <div class="card">
-      <h3>🔧 Voice Memos</h3>
-      <p>Transcribes voice messages, extracts actions, files them in the right project</p>
+      <h3>🎤 Voice Memos</h3>
+      <p>Transcribe → extract actions → file</p>
     </div>
   </div>
 </section>
@@ -355,34 +358,36 @@
 <!-- SLIDE 11: Skills -->
 <section>
   <h2>The Power: Skills</h2>
-  <p style="color:#888; font-size:0.8em;">Think of them as plugins that give your agent new abilities.</p>
-  <div class="grid-3" style="margin-top:1em;">
+  <p style="color:#888; font-size:0.7em;">Plugins that give your agent new abilities. Install in one command.</p>
+  <div class="grid-3" style="margin-top:0.6em;">
     <div class="card">
-      <h3>📧 Gmail/Calendar</h3>
-      <p>Read, search, triage email. Check calendar. Send invites.</p>
+      <h3>📧 Gmail / Calendar</h3>
+      <p>Triage email, check calendar, send invites</p>
     </div>
     <div class="card">
       <h3>🐙 GitHub</h3>
-      <p>Issues, PRs, CI runs, code review — all from chat.</p>
+      <p>Issues, PRs, CI runs, code review</p>
     </div>
     <div class="card">
       <h3>🌤️ Weather</h3>
-      <p>Current conditions & forecasts, no API key needed.</p>
+      <p>Forecasts, no API key needed</p>
     </div>
+  </div>
+  <div class="grid-3" style="margin-top:0;">
     <div class="card">
       <h3>🎤 Whisper</h3>
-      <p>Local speech-to-text. Send voice, get transcription.</p>
+      <p>Local speech-to-text from voice memos</p>
     </div>
     <div class="card">
       <h3>💰 Monarch Money</h3>
-      <p>Financial data — accounts, transactions, budgets.</p>
+      <p>Accounts, transactions, budgets</p>
     </div>
     <div class="card">
       <h3>🔒 Health Check</h3>
-      <p>Security audit of your host machine.</p>
+      <p>Security audit of your host</p>
     </div>
   </div>
-  <p style="font-size:0.6em; margin-top:1em;">
+  <p style="font-size:0.55em; margin-top:0.5em;">
     Browse more at <a href="https://clawhub.com">clawhub.com</a> · Build your own with the skill-creator skill
   </p>
 </section>
