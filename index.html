@@ -203,6 +203,105 @@
   </div>
 </section>
 
+<!-- SLIDE: Memory - The Problem -->
+<section>
+  <h2>The Memory Problem 🧠</h2>
+  <p style="font-size:0.7em; margin-top:0.5em;">Most AI assistants have the memory of a goldfish.</p>
+  <div style="margin-top:0.5em;">
+    <div class="step-box" style="font-size:0.6em; border-color:#ff6b6b; padding:0.3em 0.6em; margin:0.2em 0;">❌ Every conversation starts fresh</div>
+    <div class="step-box" style="font-size:0.6em; border-color:#ff6b6b; padding:0.3em 0.6em; margin:0.2em 0;">❌ You repeat yourself constantly — who you work with, what you're building</div>
+    <div class="step-box" style="font-size:0.6em; border-color:#ff6b6b; padding:0.3em 0.6em; margin:0.2em 0;">❌ Platform "memory" = flat list of facts. No structure, no decay.</div>
+  </div>
+  <br>
+  <blockquote style="font-size:0.6em; padding:0.3em 0.8em;">
+    "If you're running a personal AI assistant — something that acts more like a chief of staff than a chatbot — you need real memory architecture. Not a bullet list. A system."
+    <br><span style="color:#888;">— Nat Eliason (384K views)</span>
+  </blockquote>
+</section>
+
+<!-- SLIDE: Memory - Three Layers -->
+<section>
+  <h2>Three Layers of AI Memory</h2>
+  <p style="font-size:0.5em; color:#888;">Based on Nat Eliason's framework · PARA + Atomic Facts + Decay</p>
+  <div class="grid-3" style="margin-top:0.4em; gap:0.5em;">
+    <div class="card" style="border-color:#4fc3f7; padding:0.5em 0.7em;">
+      <h3 style="font-size:0.75em;">🗂️ Knowledge Graph</h3>
+      <p style="font-size:0.5em; line-height:1.5;">
+        <strong>Long-term declarative memory</strong><br>
+        PARA directories: Projects, Areas, Resources, Archives<br>
+        Each entity = summary.md + items.json (atomic facts)<br>
+        Facts are <em>never deleted</em> — just superseded
+      </p>
+    </div>
+    <div class="card" style="border-color:#69f0ae; padding:0.5em 0.7em;">
+      <h3 style="font-size:0.75em;">📅 Daily Notes</h3>
+      <p style="font-size:0.5em; line-height:1.5;">
+        <strong>Episodic memory</strong><br>
+        Raw timeline: what happened today<br>
+        Written every conversation<br>
+        Durable facts get extracted → Knowledge Graph
+      </p>
+    </div>
+    <div class="card" style="border-color:#ff6b6b; padding:0.5em 0.7em;">
+      <h3 style="font-size:0.75em;">🧬 Tacit Knowledge</h3>
+      <p style="font-size:0.5em; line-height:1.5;">
+        <strong>Procedural memory</strong><br>
+        How you work, communicate, decide<br>
+        Updated when new patterns emerge<br>
+        = SOUL.md + USER.md in OpenClaw
+      </p>
+    </div>
+  </div>
+  <p style="font-size:0.5em; margin-top:0.3em; color:#888;">
+    💡 Like human memory: facts you know · what happened when · how you operate
+  </p>
+</section>
+
+<!-- SLIDE: Memory - How We Built It -->
+<section>
+  <h2>How We Built It <span class="green">✓</span></h2>
+  <p style="font-size:0.5em; color:#888;">Our actual implementation on OpenClaw (running right now)</p>
+  <div style="display:flex; gap:1em; margin-top:0.3em; align-items:flex-start;">
+    <div style="flex:1;">
+      <div class="command-block" style="font-size:0.5em; padding:0.6em; line-height:1.5;">
+        <span class="comment"># Our vault structure (Obsidian):</span><br>
+        obi-vault/<br>
+        ├── 0-Inbox/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Untriaged actions</span><br>
+        ├── 1-Projects/ &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Active work (PARA)</span><br>
+        ├── 2-Areas/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Ongoing (PARA)</span><br>
+        ├── 3-Resources/ &nbsp;&nbsp;&nbsp;<span class="comment"># Reference (PARA)</span><br>
+        ├── 4-Archive/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Done (PARA)</span><br>
+        ├── agent/<br>
+        │ &nbsp;&nbsp;├── MEMORY.md &nbsp;&nbsp;&nbsp;<span class="comment"># Long-term knowledge</span><br>
+        │ &nbsp;&nbsp;├── SOUL.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Agent personality</span><br>
+        │ &nbsp;&nbsp;├── USER.md &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Who Yash is</span><br>
+        │ &nbsp;&nbsp;└── memory/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Daily notes</span><br>
+        └── daily/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Daily ops</span>
+      </div>
+    </div>
+    <div style="flex:0.7;">
+      <div class="card" style="padding:0.5em 0.7em; border-color:#69f0ae;">
+        <h3 style="font-size:0.65em;">What this means:</h3>
+        <p style="font-size:0.5em; line-height:1.6;">
+          ✅ Agent reads SOUL + USER + MEMORY on boot<br>
+          ✅ Daily notes written every session<br>
+          ✅ Heartbeat extracts durable facts<br>
+          ✅ SuperMemory auto-injects context<br>
+          ✅ All plain markdown — no lock-in<br>
+          ✅ Syncs to phone via iCloud
+        </p>
+      </div>
+      <div class="card" style="padding:0.5em 0.7em; margin-top:0.2em;">
+        <h3 style="font-size:0.65em;">The result:</h3>
+        <p style="font-size:0.5em; line-height:1.5;">
+          "My agent knows my projects, my health goals, my writing style, and what I said last Tuesday."<br>
+          <strong class="highlight">It's not autocomplete. It's context.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SLIDE 7: EverClaw + Morpheus -->
 <section>
   <h2>EverClaw + Morpheus 🧠</h2>
