@@ -435,6 +435,56 @@
   </div>
 </section>
 
+<!-- SLIDE: Security -->
+<section>
+  <h2>Security: <span class="green">Your Data, Your Rules</span> 🔒</h2>
+  <p style="color:#888; font-size:0.55em;">OpenClaw runs on YOUR machine. Here's how we lock it down.</p>
+  <div style="display:flex; gap:1em; margin-top:0.3em; align-items:flex-start;">
+    <div style="flex:1;">
+      <div class="step-box" style="font-size:0.55em; padding:0.3em 0.6em; margin:0.15em 0; border-color:#69f0ae;">
+        <strong class="green">🔐 Gateway Auth</strong> — Token-based authentication. No token = no access.
+      </div>
+      <div class="step-box" style="font-size:0.55em; padding:0.3em 0.6em; margin:0.15em 0; border-color:#69f0ae;">
+        <strong class="green">🏠 Loopback Binding</strong> — Gateway only listens on 127.0.0.1. Not exposed to internet.
+      </div>
+      <div class="step-box" style="font-size:0.55em; padding:0.3em 0.6em; margin:0.15em 0; border-color:#69f0ae;">
+        <strong class="green">🛡️ Prompt Injection Defense</strong> — SECURITY.md with cognitive inoculation framework (ACIP v1.3). Agent recognizes and rejects injection attempts in emails, web pages, messages.
+      </div>
+      <div class="step-box" style="font-size:0.55em; padding:0.3em 0.6em; margin:0.15em 0; border-color:#69f0ae;">
+        <strong class="green">👤 Channel Allowlists</strong> — Control who can talk to your agent. Per-channel policies (open/allowlist).
+      </div>
+      <div class="step-box" style="font-size:0.55em; padding:0.3em 0.6em; margin:0.15em 0; border-color:#69f0ae;">
+        <strong class="green">🔑 Secrets in Keychain</strong> — API keys in macOS Keychain / OS credential store, not config files.
+      </div>
+      <div class="step-box" style="font-size:0.55em; padding:0.3em 0.6em; margin:0.15em 0; border-color:#69f0ae;">
+        <strong class="green">📋 Security Audits</strong> — Built-in <code>openclaw security audit --deep</code> scans for misconfigs.
+      </div>
+    </div>
+    <div style="flex:0.6;">
+      <div class="card" style="padding:0.5em 0.7em; border-color:#69f0ae;">
+        <h3 style="font-size:0.7em;">DigitalOcean 1-Click adds:</h3>
+        <p style="font-size:0.5em; line-height:1.6;">
+          ✅ Firewall rules (auto)<br>
+          ✅ Non-root execution<br>
+          ✅ Docker sandboxing<br>
+          ✅ SSH-only access<br>
+          ✅ Authenticated gateway
+        </p>
+      </div>
+      <div class="card" style="padding:0.5em 0.7em; margin-top:0.3em;">
+        <h3 style="font-size:0.7em;">Our Audit Results:</h3>
+        <p style="font-size:0.5em; line-height:1.6;">
+          ✅ Loopback bind<br>
+          ✅ Token auth enabled<br>
+          ✅ No public exposure<br>
+          ✅ Secrets in Keychain<br>
+          ⚠️ 1 flag: Slack group=open
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SLIDE 13: Personalization - the Secret Sauce -->
 <section>
   <h2>The Secret Sauce: <span class="highlight">Personalization</span></h2>
